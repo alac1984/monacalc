@@ -1,0 +1,22 @@
+services:
+  postgres:
+    container_name: monacalcdb
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-monacalcdbuser}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-monacalcdb}
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+    postgres:
