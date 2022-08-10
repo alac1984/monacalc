@@ -3,8 +3,8 @@ services:
     container_name: monacalcdb
     image: postgres
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-monacalcdbuser}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-monacalcdb}
+      POSTGRES_USER: ${POSTGRES_USER:-monacalc}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-a1k8u2}
       PGDATA: /data/postgres
     volumes:
        - postgres:/data/postgres
