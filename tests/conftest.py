@@ -7,7 +7,7 @@ from repository.objects import SchoolDB, ContractDB
 
 @pytest.fixture(scope="module")
 def repo():
-    repo = Repository("sqlite:///:memory:")
+    repo = Repository("sqlite+pysqlite:///:memory:")
 
     repo.base.metadata.create_all(repo.engine)
 

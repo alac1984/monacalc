@@ -8,7 +8,7 @@ Base = declarative_base()
 class SchoolDB(Base):
     __tablename__ = "tb_school"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String, nullable=False)
 
     contracts = relationship(
