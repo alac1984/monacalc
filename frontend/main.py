@@ -1,5 +1,6 @@
 # type: ignore[attr-defined]
 from fastapi import FastAPI, Request, HTTPException
+from fastapi.routing import APIRoute
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
@@ -23,7 +24,7 @@ def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.get("/contracts", response_class=HTMLResponse)
+@app.get("/contratos", response_class=HTMLResponse)
 def list_contracts_endpoint(request: Request):
     sysreq = build_list_contracts_request()
     sysresp = list_contracts(repo, sysreq)
