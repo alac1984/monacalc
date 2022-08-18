@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">school_id</th>
+                            <th scope="col">mat</th>
+                            <th scope="col">start</th>
+                            <th scope="col">end</th>
+                            <th scope="col">work_hours</th>
+                            <th scope="col">planning</th>
+                            <th scope="col">total_hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for contract in contracts %}
+                            <tr>
+                                <th scope="row">{{contract.id}}</th>
+                                <td>{{contract.school_id}}</td>
+                                <td>{{contract.mat}}</td>
+                                <td>{{contract.start}}</td>
+                                <td>{{contract.end}}</td>
+                                <td>{{contract.planning}}</td>
+                                <td>{{contract.total_hours}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
