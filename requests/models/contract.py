@@ -1,3 +1,4 @@
+from datetime import date
 from collections.abc import Iterable
 from requests.base import BaseValidRequest, BaseInvalidRequest
 
@@ -7,6 +8,14 @@ class ListContractsInvalidRequest(BaseInvalidRequest):
 
 
 class ListContractsValidRequest(BaseValidRequest):
+    pass
+
+
+class CreateContractValidRequest(BaseValidRequest):
+    pass
+
+
+class CreateContractInvalidRequest(BaseInvalidRequest):
     pass
 
 
@@ -36,3 +45,25 @@ def build_list_contracts_request(
     #     return invalid_req
 
     return ListContractsValidRequest(filters=filters)
+
+
+def build_create_contract_request(
+    school_id: int,
+    mat: str,
+    start: date,
+    end: date,
+    work_hours: int,
+) -> CreateContractInvalidRequest | CreateContractValidRequest:
+    invalid_req = CreateContractInvalidRequest()
+
+    # TODO: insert all conditions
+
+    data = {
+        "school_id": school_id,
+        "mat": mat,
+        "start": start,
+        "end": end,
+        "work_hours": work_hours,
+    }
+
+    return CreateContractValidRequest(data=data)

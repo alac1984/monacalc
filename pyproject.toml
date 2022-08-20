@@ -12,6 +12,7 @@ fastapi = "^0.79.0"
 Jinja2 = "^3.1.2"
 psycopg2-binary = "^2.9.3"
 uvicorn = "^0.18.2"
+python-multipart = "^0.0.5"
 
 [tool.poetry.dev-dependencies]
 pynvim = "^0.4.3"

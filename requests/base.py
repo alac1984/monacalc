@@ -18,9 +18,13 @@ class BaseInvalidRequest:
 class BaseValidRequest:
     def __init__(self, **kwargs) -> None:
         self.filters = kwargs.get("filters", {})
+        self.data = kwargs.get("data", {})
 
     def __bool__(self) -> bool:
         return True
 
     def __repr__(self):
-        return f"{type(self).__name__}(filters={self.filters})"
+        if self.filters:
+            return f"{type(self).__name__}(filters={self.filters})"
+        else:
+            return f"{type(self).__name__}(data={self.data})"

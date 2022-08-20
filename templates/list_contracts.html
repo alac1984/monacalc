@@ -12,7 +12,7 @@
                             <th scope="col">start</th>
                             <th scope="col">end</th>
                             <th scope="col">work_hours</th>
-                            <th scope="col">planning</th>
+                            <th scope="col">planning_hours</th>
                             <th scope="col">total_hours</th>
                         </tr>
                     </thead>
@@ -24,7 +24,8 @@
                                 <td>{{contract.mat}}</td>
                                 <td>{{contract.start}}</td>
                                 <td>{{contract.end}}</td>
-                                <td>{{contract.planning}}</td>
+                                <td>{{contract.work_hours}}</td>
+                                <td>{{contract.planning_hours}}</td>
                                 <td>{{contract.total_hours}}</td>
                             </tr>
                         {% endfor %}
